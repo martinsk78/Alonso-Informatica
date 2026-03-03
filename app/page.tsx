@@ -625,7 +625,6 @@ export default function Home() {
                 className={`service-card fade-up ${servInView ? "visible" : ""} delay-${i + 1}`}
               >
                 <div
-                  style={{ fontSize: "2rem", marginBottom: 20 }}
                   className="float-anim"
                   style={{
                     animationDelay: `${i * 0.4}s`,
