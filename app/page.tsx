@@ -2,6 +2,11 @@
 
 import { useState, useEffect, useRef } from "react";
 
+interface AnimNumTypes {
+  target: string,
+  suffix: string;
+}
+
 const SERVICES = [
   {
     icon: "💻",
@@ -69,7 +74,7 @@ function useInView(threshold = 0.15) {
   return [ref, inView];
 }
 
-function AnimatedNumber({ target, suffix = "" }) {
+function AnimatedNumber({ target, suffix = "" }: AnimNumTypes) {
   const [val, setVal] = useState(0);
   const [ref, inView] = useInView();
   const numTarget = parseInt(target);
@@ -375,7 +380,7 @@ export default function Home() {
             href="https://wa.me/549XXXXXXXXXX"
             target="_blank"
             className="btn-primary"
-            style={{ padding: "10px 22px", }}
+            style={{ padding: "10px 22px" }}
           >
             WhatsApp
           </a>
@@ -585,7 +590,11 @@ export default function Home() {
       {/* SERVICIOS */}
       <section
         id="servicios"
-        style={{ padding: "120px 40px", backgroundImage:"url('https://www.topconpositioning.com/content/dam/topconpositioning/es/products/heros/servicio-tecnico-web-hero.jpg')" }}
+        style={{
+          padding: "120px 40px",
+          backgroundImage:
+            "url('https://www.topconpositioning.com/content/dam/topconpositioning/es/products/heros/servicio-tecnico-web-hero.jpg')",
+        }}
       >
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div ref={servRef} style={{ marginBottom: 64 }}>
@@ -638,9 +647,7 @@ export default function Home() {
                 >
                   {s.title}
                 </h3>
-                <p
-                  style={{ color: "#eee", fontSize: "1rem", lineHeight: 1.7 }}
-                >
+                <p style={{ color: "#eee", fontSize: "1rem", lineHeight: 1.7 }}>
                   {s.desc}
                 </p>
               </div>
@@ -652,7 +659,11 @@ export default function Home() {
       {/* POR QUÉ ELEGIRNOS */}
       <section
         id="nosotros"
-        style={{ padding: "120px 40px", background: "linear-gradient(90deg,rgba(3, 19, 38, 1) 12%, rgba(21, 50, 79, 1) 33%, rgba(2, 17, 31, 1) 76%, rgba(18, 49, 79, 1) 100%)" }}
+        style={{
+          padding: "120px 40px",
+          background:
+            "linear-gradient(90deg,rgba(3, 19, 38, 1) 12%, rgba(21, 50, 79, 1) 33%, rgba(2, 17, 31, 1) 76%, rgba(18, 49, 79, 1) 100%)",
+        }}
       >
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div
@@ -774,7 +785,12 @@ export default function Home() {
       {/* CTA */}
       <section
         className="cta-section"
-        style={{ padding: "120px 40px", textAlign: "center", backgroundImage:"url('https://www.gurugo.com.ar/_next/image?url=https%3A%2F%2Fwww.paginasamarillas.com.ar%2Fimagenes%2Fpipe%2FAVI15841%2F15841625%2Freparacion-de-placa-galeria02.jpg&w=3840&q=65')"}}
+        style={{
+          padding: "120px 40px",
+          textAlign: "center",
+          backgroundImage:
+            "url('https://www.gurugo.com.ar/_next/image?url=https%3A%2F%2Fwww.paginasamarillas.com.ar%2Fimagenes%2Fpipe%2FAVI15841%2F15841625%2Freparacion-de-placa-galeria02.jpg&w=3840&q=65')",
+        }}
       >
         <div
           style={{
@@ -792,7 +808,6 @@ export default function Home() {
               transform: "translate(-50%,-50%)",
               width: "600px",
               height: "300px",
-              
             }}
           />
         </div>
